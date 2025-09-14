@@ -1,0 +1,23 @@
+# Angular (frontend)
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# Spring Boot (backend)
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE / System files
+*.iml
+.idea/
+.vscode/
+.DS_Store
+
+# Env / Secrets
+*.env
+application.properties
+application.yml

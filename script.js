@@ -1,38 +1,84 @@
-// Sample courses
-const courses = [
-  { name: "Computer Science", duration: "4 years", fee: "₹1,20,000 / year" },
-  { name: "Mechanical Engineering", duration: "4 years", fee: "₹1,00,000 / year" },
-  { name: "Business Management", duration: "3 years", fee: "₹90,000 / year" }
-];
+// Mobile nav toggle
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.querySelector(".nav-links");
 
-// Sample institutes
-const institutes = [
-  { name: "IIT Delhi", location: "Delhi", rating: "⭐⭐⭐⭐⭐" },
-  { name: "NIT Rourkela", location: "Odisha", rating: "⭐⭐⭐⭐" },
-  { name: "IIM Bangalore", location: "Bangalore", rating: "⭐⭐⭐⭐⭐" }
-];
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
 
-// Load courses
-const courseList = document.getElementById("course-list");
-courses.forEach(c => {
-  const div = document.createElement("div");
-  div.classList.add("card");
-  div.innerHTML = `<h3>${c.name}</h3><p>Duration: ${c.duration}</p><p>Fee: ${c.fee}</p>`;
-  courseList.appendChild(div);
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
+  });
+}
+
+// Year in footer
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+// Filter buttons
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    projectCards.forEach((card) => {
+      const category = card.dataset.category;
+      if (filter === "all" || filter === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 });
 
-// Load institutes
-const instituteList = document.getElementById("institute-list");
-institutes.forEach(i => {
-  const div = document.createElement("div");
-  div.classList.add("card");
-  div.innerHTML = `<h3>${i.name}</h3><p>Location: ${i.location}</p><p>Rating: ${i.rating}</p>`;
-  instituteList.appendChild(div);
+// Details overlay
+const overlay = document.getElementById("detailsOverlay");
+const detailPanels = overlay
+  ? overlay.querySelectorAll(".details-panel")
+  : [];
+
+function openDetails(targetId) {
+  if (!overlay) return;
+
+  overlay.classList.add("active");
+  detailPanels.forEach((panel) => {
+    panel.classList.toggle("active", panel.id === targetId.replace("#", ""));
+  });
+}
+
+function closeDetails() {
+  if (!overlay) return;
+  overlay.classList.remove("active");
+  detailPanels.forEach((panel) => panel.classList.remove("active"));
+}
+
+// Open detail from buttons
+document.querySelectorAll(".details-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.getAttribute("data-target");
+    openDetails(target);
+  });
 });
 
-// Handle contact form
-document.getElementById("contact-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Thank you for contacting us!");
-  e.target.reset();
+// Close when clicking close buttons
+overlay?.querySelectorAll("[data-close]").forEach((btn) => {
+  btn.addEventListener("click", closeDetails);
+});
+
+// Close when clicking outside panel
+overlay?.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    closeDetails();
+  }
 });

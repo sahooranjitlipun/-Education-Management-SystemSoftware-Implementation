@@ -1,51 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education Management System</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Ranjit | Full-Stack & ML Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Education Management System</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#institutes">Institutes</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="nav-inner container">
+      <div class="logo">
+        <span class="logo-mark">R</span>
+        <span class="logo-text">Ranjit | Projects</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </div>
   </header>
 
-  <section id="home" class="section">
-    <h2>Welcome to the Education Management System</h2>
-    <p>Search and compare the best institutes and courses aligned with your career goals.</p>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="hero-kicker">Full-Stack • ML • Cloud</p>
+        <h1>Education & Healthcare Platforms with AI at the Core</h1>
+        <p class="hero-subtitle">
+          I build end-to-end solutions where <strong>students</strong> and <strong>patients</strong>
+          get instant, intelligent help through <strong>ML-powered chatbots</strong>
+          and robust full-stack architectures.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View Project Showcase</a>
+          <a href="#about" class="btn ghost">About this Demo</a>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag">MERN</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Angular</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">ML Chatbots</span>
+          <span class="tag">Docker &amp; Kubernetes</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="mini-badge">Demo View</div>
+        <h2>Project Snapshot</h2>
+        <ul class="hero-list">
+          <li><span class="dot"></span> AI recommendation engine for institutes</li>
+          <li><span class="dot"></span> Symptom-based triage chatbot for patients</li>
+          <li><span class="dot"></span> Microservices, containerization &amp; orchestration</li>
+        </ul>
+        <p class="hero-note">
+          This is a front-end demonstration of my larger, production-oriented systems.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="courses" class="section">
-    <h2>Available Courses</h2>
-    <div id="course-list"></div>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Project Showcase</h2>
+        <p>Interactive view of my end-to-end platforms in <strong>EdTech</strong> and <strong>HealthTech</strong>.</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="edtech">EdTech</button>
+        <button class="filter-btn" data-filter="healthtech">HealthTech</button>
+      </div>
+
+      <div class="project-grid">
+        <!-- Project 1: Education Management System -->
+        <article class="project-card" data-category="edtech">
+          <div class="project-label edtech">EdTech</div>
+          <h3>Education Management System – Intelligent Discovery Platform</h3>
+          <p class="project-role">Individual Project • MERN Stack • AI-Driven</p>
+
+          <div class="stack">
+            <span>MERN</span>
+            <span>REST APIs</span>
+            <span>AI Chatbot</span>
+            <span>Data Analytics</span>
+          </div>
+
+          <p class="project-summary">
+            A dynamic education discovery platform where students and parents can
+            search, compare, and evaluate institutes and courses using multiple
+            real-world parameters.
+          </p>
+
+          <ul class="project-points">
+            <li>Multi-parameter filters: location, fees, specialization, ratings.</li>
+            <li>AI recommendation engine aligned with student career interests.</li>
+            <li>Instant-query chatbot to fetch institute details & fee structures.</li>
+          </ul>
+
+          <button class="btn secondary details-btn" data-target="#eduDetails">
+            View Detailed Flow
+          </button>
+        </article>
+
+        <!-- Project 2: Healthcare Assistance Platform -->
+        <article class="project-card" data-category="healthtech">
+          <div class="project-label healthtech">HealthTech</div>
+          <h3>Healthcare Assistance Platform – Intelligent Patient Support</h3>
+          <p class="project-role">Full Stack • Spring Boot + Angular • Microservices</p>
+
+          <div class="stack">
+            <span>Spring Boot</span>
+            <span>Angular</span>
+            <span>MySQL</span>
+            <span>Python ML Chatbot</span>
+            <span>Docker</span>
+            <span>Kubernetes</span>
+          </div>
+
+          <p class="project-summary">
+            A comprehensive healthcare assistance platform providing patients
+            with automated query resolution, symptom-based guidance, and robust
+            hospital information access.
+          </p>
+
+          <ul class="project-points">
+            <li>ML chatbot to filter symptoms & suggest relevant departments.</li>
+            <li>Automated workflows for appointments & hospital info retrieval.</li>
+            <li>Containerized microservices architecture for scalability & uptime.</li>
+          </ul>
+
+          <button class="btn secondary details-btn" data-target="#healthDetails">
+            View Detailed Flow
+          </button>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section id="institutes" class="section">
-    <h2>Institutes</h2>
-    <div id="institute-list"></div>
+  <!-- Details Drawer / Modals -->
+  <section class="details-overlay" id="detailsOverlay">
+    <div class="details-panel" id="eduDetails">
+      <button class="close-btn" data-close>&times;</button>
+      <h3>Education Management System – Deep Dive</h3>
+      <p class="details-subtitle">
+        Dynamic education discovery platform built with the MERN stack and ML-assisted recommendations.
+      </p>
+
+      <div class="details-grid">
+        <div>
+          <h4>Key Capabilities</h4>
+          <ul>
+            <li>
+              <strong>Smart search & comparison:</strong> Users explore institutes and
+              courses using filters like city, fee range, specialization, mode
+              of study, and rating bands.
+            </li>
+            <li>
+              <strong>AI-driven recommendations:</strong> Personalized suggestions based
+              on career goals, preferred locations, and budget constraints.
+            </li>
+            <li>
+              <strong>Instant-query chatbot:</strong> ML-inspired bot that retrieves
+              institute profile, fee structure, and nearby options without manual navigation.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tech & Design Highlights</h4>
+          <ul>
+            <li>MERN stack for a responsive, SPA-style user experience.</li>
+            <li>Structured data models for institutes, courses, fees & reviews.</li>
+            <li>Filtering & ranking logic for transparent, career-aligned choices.</li>
+            <li>Analytics layer to monitor search trends and user behavior.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="details-footnote">
+        This demo focuses on the front-end. The full version connects to
+        real APIs and ML services for live recommendations and analytics.
+      </p>
+    </div>
+
+    <div class="details-panel" id="healthDetails">
+      <button class="close-btn" data-close>&times;</button>
+      <h3>Healthcare Assistance Platform – Deep Dive</h3>
+      <p class="details-subtitle">
+        Full-stack microservices system that supports patients from query to appointment, powered by ML chatbots.
+      </p>
+
+      <div class="details-grid">
+        <div>
+          <h4>Key Capabilities</h4>
+          <ul>
+            <li>
+              <strong>Symptom-aware ML chatbot:</strong> Guides patients to
+              relevant departments or specialists based on initial complaints.
+            </li>
+            <li>
+              <strong>Automated patient support:</strong> Helps with appointment
+              guidance, hospital information, and basic FAQs without manual calls.
+            </li>
+            <li>
+              <strong>Operational efficiency:</strong> Reduces manual intervention,
+              especially during peak hospital hours.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tech & Architecture</h4>
+          <ul>
+            <li>Java Spring Boot microservices for backend APIs.</li>
+            <li>Angular SPA for responsive, modular front-end UI.</li>
+            <li>MySQL for structured storage of hospital & patient data.</li>
+            <li>Python-based ML chatbot service integrated with core APIs.</li>
+            <li>Deployed using Docker & Kubernetes for scale and reliability.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="details-footnote">
+        This front-end demo mirrors how the production system behaves,
+        highlighting architecture, flows, and patient-centric design.
+      </p>
+    </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+  <!-- About / Footer -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div>
+        <h2>About this Demo</h2>
+        <p>
+          This website is a <strong>lightweight front-end showcase</strong> of two
+          larger full-stack systems that I have built:
+        </p>
+        <ul>
+          <li>Education Management System for transparent, AI-assisted institute discovery.</li>
+          <li>Healthcare Assistance Platform for intelligent patient support and hospital workflows.</li>
+        </ul>
+        <p>
+          The full implementations include secure APIs, real databases,
+          ML models, and cloud-native deployments. This demo focuses on
+          presenting the <strong>architecture, capabilities, and impact</strong> in a way
+          that is easy to understand in interviews, hackathons, and reviews.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <h3>Quick Info</h3>
+        <ul>
+          <li><strong>Name:</strong> Ranjit Kumar Sahoo</li>
+          <li><strong>Role:</strong> B.Tech CSE • Full-Stack & ML Enthusiast</li>
+          <li><strong>Tech:</strong> MERN, Spring Boot, Angular, Python, Docker, K8s</li>
+        </ul>
+        <p class="about-note">
+          Next steps: connect this UI to live APIs, plug in real ML
+          services, and deploy as a full demo on cloud.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Education Management System. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Ranjit Kumar Sahoo. All rights reserved.</p>
+      <p class="footer-note">Demo portfolio view of EdTech &amp; HealthTech systems.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
